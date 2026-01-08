@@ -1,4 +1,4 @@
-const cars = [
+export const cars = [
     {
         id: 1,
         make: 'Toyota',
@@ -91,77 +91,3 @@ const cars = [
     img: 'https://www.pngmart.com/files/22/Tesla-Model-3-PNG-Isolated-Photo.png'
     }
 ]
-
-
-let div = document.getElementById("containar");
-
-let select = document.getElementById("selectYear");
-
-
-function getData(sortedCars) {
-
-div.innerHTML = "";
-let carsToDisplay;
-
-if (sortedCars && sortedCars.length > 0) {
-    carsToDisplay = sortedCars;
-} else {
-    carsToDisplay = cars;
-}
-
-carsToDisplay.forEach(item => {
-
-    let newDiv = document.createElement("div");
-
-    newDiv.innerHTML = `
-        <div class="cars">
-        <img src="${item.img}" alt="">
-        <h1>${item.make}</h1>
-        <h2>${item.model}</h2>
-        <h3>${item.year}</h3>
-        <p>${item.title}</p>
-    </div>`
-
-    div.appendChild(newDiv);
-})
-} getData();
-
-
-
-select.addEventListener("change", () => {
-   if (select.value == "new") {
-    let sortedCars = cars.sort((a, b) => {  
-    return b.year - a.year;
-
-    
-   });
-
-   getData(sortedCars); 
-   }
-   else if (select.value == "old") {
-    let sortedCars = cars.sort((a, b) => {  
-        return a.year - b.year;
-       })
-   getData(sortedCars);
-   
-}
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
