@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/single.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/single.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <table class="updateProduct">
+        <tr>
+          <input type="text" placeholder="rasm " id="inpImg" />
+        </tr>
+        <tr>
+          <input type="text" placeholder="nomini " id="inpName" />
+        </tr>
+        <tr>
+          <input type="text" placeholder="tarifi " id="inpDesc" />
+        </tr>
+        <tr>
+          <input type="text" placeholder="narxi " id="inpPrice" />
+        </tr>
+        <button class="updateBtn">Yangilash</button>
+      </table>
 
+      <i class="bi bi-pencil-square edit"></i>
+      <i class="bi bi-trash delete"></i>
 
+      <img class="single_img" src="" alt="Product" />
 
-<div class="container">
-    <img class="single_img" src="" alt="Product">
-    
-    <div class="product_details">
+      <div class="product_details">
         <h1 class="single_title">Yuborilmoqda...</h1>
-        <p class="single_description">Iltimos kuting, ma'lumotlar yuklanmoqda.</p>
+        <p class="single_description">
+          Iltimos kuting, ma'lumotlar yuklanmoqda.
+        </p>
         <span class="single_price">0.00</span>
-        <br>
+        <br />
         <button class="buy_btn">Hozir sotib olish</button>
+      </div>
     </div>
-</div>
 
-
-  <script src="./js/single.js"></script>
-</body>
+    <script src="./js/single.js"></script>
+  </body>
 </html>

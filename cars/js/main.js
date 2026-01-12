@@ -1,4 +1,8 @@
 let saved = JSON.parse(localStorage.getItem("token"))
+let singOut = document.querySelector(".signout")
+
+
+let div = document.getElementById("container")
 
 if(saved){
    fetch('https://dummyjson.com/products')
@@ -72,4 +76,13 @@ fetch(`https://dummyjson.com/products/search?q=${e.target.value.toLowerCase()}`)
 .then(data =>{
       getdata(data.products)
 });
+})
+
+
+singOut.addEventListener("click", () => {
+   localStorage.removeItem("token")
+   alert("Siz tizimdan chiqdingiz")
+   setTimeout(()=>{
+      window.location = "./login.html"
+   }, 1500)
 })

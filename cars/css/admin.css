@@ -1,0 +1,150 @@
+/* Google Fonts dan zamonaviy shrift yuklash */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-body: #0f172a; /* To'q ko'k fon */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-color: #38bdf8; /* Yorqin havorang */
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    min-height: 100vh;
+    background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
+}
+
+/* Header dizayni */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.h1::after {
+    content: 'Dashboard';
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav_item a:hover {
+    color: var(--accent-color);
+}
+
+/* Sign out tugmasi */
+.btn {
+    background: transparent;
+    color: var(--danger);
+    border: 1.5px solid var(--danger);
+    padding: 8px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--danger);
+    color: white;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Jadval qismi */
+.main_table {
+    padding: 40px 8%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--glass-border);
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Rasm uchun stil (td ichidagi img) */
+td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #1e293b; /* Rasm yo'q bo'lsa joyi ko'rinib turishi uchun */
+    border: 1px solid var(--glass-border);
+}
+
+/* Ism ustuni */
+td:nth-child(2) {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Parol ustuni - maxfiyroq ko'rinish */
+td:nth-child(3) {
+    font-family: monospace;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+/* Responsive (Mobil uchun) */
+@media (max-width: 768px) {
+    .header { padding: 15px 5%; }
+    .main_table { padding: 20px 5%; }
+    th, td { padding: 12px; }
+}
